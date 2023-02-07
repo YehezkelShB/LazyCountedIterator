@@ -66,7 +66,7 @@ public:
 	constexpr lazy_counted_iterator() requires std::default_initializable<I> = default;
 
 	constexpr lazy_counted_iterator(I x, std::iter_difference_t<I> n)
-		: current(x), length(n)
+		: current(std::move(x)), length(n)
 	{
 	}
 

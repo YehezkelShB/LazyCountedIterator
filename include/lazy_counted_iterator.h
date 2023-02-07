@@ -122,16 +122,7 @@ public:
 
 	constexpr void operator++(int)
 	{
-		--length;
-		try
-		{
-			if (length) current++;
-		}
-		catch (...)
-		{
-			++length;
-			throw;
-		}
+		++*this;
 	}
 
 	constexpr lazy_counted_iterator operator++(int)

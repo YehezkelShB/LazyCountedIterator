@@ -137,9 +137,8 @@ public:
 	constexpr lazy_counted_iterator operator++(int)
 		requires std::forward_iterator<I>
 	{
-		auto tmp = *this;
-		if (length > 1) ++current;
-		--length;
+		lazy_counted_iterator tmp = *this;
+		++*this;
 		return tmp;
 	}
 
